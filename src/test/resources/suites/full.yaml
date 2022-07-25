@@ -1,0 +1,5 @@
+name: full regression test suite
+tests:
+  - name: regression tests
+    classes:
+      - testcases.user.Register

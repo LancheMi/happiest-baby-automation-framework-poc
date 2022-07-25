@@ -1,0 +1,5 @@
+execute;scenario;email;password;givenName;surname
+true;all fields populated;automation_interview+random_number@mail.com;Jordan123;Michael;Jordan
+true;empty givenName;automation_interview+random_number@mail.com;Jordan123;null;Jordan
+true;empty surname;automation_interview+random_number@mail.com;Jordan123;Michael;null
+true;empty givenName and surname;automation_interview+random_number@mail.com;Jordan123;null;null

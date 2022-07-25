@@ -1,0 +1,43 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
+    id 'io.qameta.allure' version '2.10.0'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    testImplementation 'io.rest-assured:kotlin-extensions:5.1.1'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.3'
+    implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.13.3'
+    implementation 'org.yaml:snakeyaml:1.30'
+}
+
+test {
+    useTestNG()
+    testLogging.showStandardStreams(true)
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '16'
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = '16'
+}
+
+allure {
+    adapter {
+        frameworks {
+            testng
+        }
+    }
+}

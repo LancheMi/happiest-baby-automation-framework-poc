@@ -1,0 +1,22 @@
+execute;scenario;email;password;givenName;surname;status;message
+true;existing email;automation_interview+23@mail.com;Jordan123;Michael;Jordan;409;This email is already being used with another account. Please choose a different email or log in
+true;no email;;Jordan123;Michael;Jordan;400;Please enter valid data
+true;missing @ in email;automation_interview+23mail.com;Jordan123;Michael;Jordan;400;Invalid Email Address
+true;missing dot in email;automation_interview+23@mailcom;Jordan123;Michael;Jordan;400;Invalid Email Address
+true;bad email;automation_interview+23@mail;Jordan123;Michael;Jordan;400;Invalid Email Address
+true;nothing before @;@mail.com;Jordan123;Michael;Jordan;400;Invalid Email Address
+true;blank space in email;automation interview+23@mail;Jordan123;Michael;Jordan;400;Invalid Email Address
+true;blank space at beginning of email; automation interview+random_number@mail;Jordan123;Michael;Jordan;400;Invalid Email Address
+true;blank space at end of email;automation interview+random_number@mail ;Jordan123;Michael;Jordan;400;Invalid Email Address
+true;no password;automation_interview+random_number@mail.com;;Michael;Jordan;400;Please enter valid data
+true;no uppercase;automation_interview+random_number@mail.com;jordan123;Michael;Jordan;400;Your password must contain at least 8 characters, including a lowercase letter, an uppercase letter and a number
+true;no lowercase;automation_interview+random_number@mail.com;JORDAN123;Michael;Jordan;400;Your password must contain at least 8 characters, including a lowercase letter, an uppercase letter and a number
+true;no number;automation_interview+random_number@mail.com;AirJordan;Michael;Jordan;400;Your password must contain at least 8 characters, including a lowercase letter, an uppercase letter and a number
+true;short password;automation_interview+random_number@mail.com;Jordan;Michael;Jordan;400;Your password must contain at least 8 characters, including a lowercase letter, an uppercase letter and a number
+true;short password;automation_interview+random_number@mail.com;123;Michael;Jordan;400;Your password must contain at least 8 characters, including a lowercase letter, an uppercase letter and a number
+true;only numbers;automation_interview+random_number@mail.com;123456789;Michael;Jordan;400;Your password must contain at least 8 characters, including a lowercase letter, an uppercase letter and a number
+true;blank space in password;automation_interview+random_number@mail.com;Jordan 123;Michael;Jordan;400;Your password must contain at least 8 characters, including a lowercase letter, an uppercase letter and a number
+true;empty givenName;automation_interview+random_number@mail.com;Jordan123;;Jordan;400;Please enter valid data
+true;blank space for givenName;automation_interview+random_number@mail.com;Jordan123; ;Jordan;400;Please enter valid data
+true;empty surname;automation_interview+random_number@mail.com;Jordan123;Michael;;400;Please enter valid data
+true;blank space for surname;automation_interview+random_number@mail.com;Jordan123;Michael; ;400;Please enter valid data
