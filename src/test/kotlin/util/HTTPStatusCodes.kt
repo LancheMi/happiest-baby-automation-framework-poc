@@ -1,3 +1,3 @@
 package util
 
-val OK: Int = 200
+const val OK: Int = 200

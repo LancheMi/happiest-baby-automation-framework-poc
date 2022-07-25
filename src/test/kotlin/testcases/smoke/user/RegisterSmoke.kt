@@ -11,8 +11,7 @@ import java.util.*
 class RegisterSmoke: BaseTest() {
 
     @Test
-    fun validateRegister() {
-
+    fun registerSmokeTest() {
         // execute or skip the test based on the flag
         executeTest(true)
 

@@ -13,9 +13,8 @@ import java.util.*
 
 class Register: BaseTest() {
 
-    @Test(dataProvider = "getValidateRegisterTestData")
-    fun validateRegister(dataTable: Hashtable<String, String>) {
-
+    @Test(dataProvider = "getRegisterPositiveScenarios")
+    fun registerPositiveTest(dataTable: Hashtable<String, String>) {
         // execute or skip the test based on the flag
         executeTest(dataTable["execute"]!!)
 
@@ -43,7 +42,6 @@ class Register: BaseTest() {
 
         // assert the response
         with(SoftAssert()) {
-
             assertEquals(registerResponse.tokenType, "Bearer", "token_type not matching")
             assertEquals(registerResponse.expiresIn, 10800, "expires_in not matching")
             assertNotNull(registerResponse.accessToken, "access_token is null")
@@ -60,13 +58,12 @@ class Register: BaseTest() {
     }
 
     @DataProvider
-    fun getValidateRegisterTestData(): Array<Array<Any?>> {
+    fun getRegisterPositiveScenarios(): Array<Array<Any?>> {
         return getTestData(System.getProperty("user.dir") + registerPositiveScenariosCSV)
     }
 
-    @Test(dataProvider = "getValidateRegisterNegativeTestData")
-    fun validateRegisterNegative(dataTable: Hashtable<String, String>) {
-
+    @Test(dataProvider = "getRegisterNegativeScenarios")
+    fun registerNegativeTest(dataTable: Hashtable<String, String>) {
         // execute or skip the test based on the flag
         executeTest(dataTable["execute"]!!)
 
@@ -95,7 +92,6 @@ class Register: BaseTest() {
 
         // assert the response
         with(SoftAssert()) {
-
             assertEquals(registerResponse.statusCode, dataTable["status"]!!.toInt(), "code not matching")
             assertTrue(registerResponse.body.asString().contains(dataTable["message"]!!), "message [${dataTable["message"]!!}] not found")
 
@@ -104,8 +100,7 @@ class Register: BaseTest() {
     }
 
     @DataProvider
-    fun getValidateRegisterNegativeTestData(): Array<Array<Any?>> {
+    fun getRegisterNegativeScenarios(): Array<Array<Any?>> {
         return getTestData(System.getProperty("user.dir") + registerNegativeScenariosCSV)
     }
-
 }

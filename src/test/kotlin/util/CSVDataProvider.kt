@@ -28,10 +28,8 @@ fun getTestData(fileName: String): Array<Array<Any?>> {
         )
     }
 
-    var dataRowNumber = 0
-    for (elem in hashtableList) {
+    for ((dataRowNumber, elem) in hashtableList.withIndex()) {
         dataSet[dataRowNumber][0] = elem
-        dataRowNumber++
     }
 
     return dataSet

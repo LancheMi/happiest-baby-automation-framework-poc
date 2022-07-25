@@ -12,12 +12,10 @@ import java.io.File
 import java.io.FileInputStream
 import java.util.*
 
-
 open class BaseTest {
 
     companion object {
         lateinit var happiestBabyBaseUri: String
-
         lateinit var userRegisterEndPoint: String
 
         private val f: String = File.separator
@@ -29,7 +27,6 @@ open class BaseTest {
     }
 
     private fun initializeProperties() {
-
         // environment properties
         val envFileName = when (System.getProperty("env") == null) {
             true -> "dev"

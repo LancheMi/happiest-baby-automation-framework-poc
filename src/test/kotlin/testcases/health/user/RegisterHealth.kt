@@ -10,8 +10,7 @@ import java.util.*
 class RegisterHealth: BaseTest() {
 
     @Test
-    fun validateRegister() {
-
+    fun registerHealthTest() {
         // execute or skip the test based on the flag
         executeTest(true)
 

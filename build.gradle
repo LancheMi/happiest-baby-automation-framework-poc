@@ -23,9 +23,17 @@ dependencies {
 
 test {
     useTestNG() {
-        if (System.getProperty("suite") == "full") { suites "src/test/resources/suites/full.yaml" }
-        else if (System.getProperty("suite") == "smoke") { suites "src/test/resources/suites/smoke.yaml" }
-        else if (System.getProperty("suite") == "health") { suites "src/test/resources/suites/health.yaml" }
+        switch (System.getProperty("suite")) {
+            case "full":
+                suites "src/test/resources/suites/full.yaml"
+                break
+            case "smoke":
+                suites "src/test/resources/suites/smoke.yaml"
+                break
+            case "health":
+                suites "src/test/resources/suites/health.yaml"
+                break
+        }
     }
     testLogging.showStandardStreams(true)
 }
