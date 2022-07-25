@@ -22,7 +22,11 @@ dependencies {
 }
 
 test {
-    useTestNG()
+    useTestNG() {
+        if (System.getProperty("suite") == "full") { suites "src/test/resources/suites/full.yaml" }
+        else if (System.getProperty("suite") == "smoke") { suites "src/test/resources/suites/smoke.yaml" }
+        else if (System.getProperty("suite") == "health") { suites "src/test/resources/suites/health.yaml" }
+    }
     testLogging.showStandardStreams(true)
 }
 
@@ -32,12 +36,4 @@ compileKotlin {
 
 compileTestKotlin {
     kotlinOptions.jvmTarget = '16'
-}
-
-allure {
-    adapter {
-        frameworks {
-            testng
-        }
-    }
 }

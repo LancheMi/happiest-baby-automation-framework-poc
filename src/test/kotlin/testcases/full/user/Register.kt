@@ -1,4 +1,4 @@
-package testcases.user
+package testcases.full.user
 
 import base.BaseTest
 import org.testng.annotations.DataProvider

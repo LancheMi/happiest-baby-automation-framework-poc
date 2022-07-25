@@ -1,0 +1,5 @@
+name: smoke test suite
+tests:
+  - name: smoke tests
+    packages:
+      - testcases.smoke.*

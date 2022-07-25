@@ -1,0 +1,5 @@
+name: health test suite
+tests:
+  - name: health tests
+    packages:
+      - testcases.health.*

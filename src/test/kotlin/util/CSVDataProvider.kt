@@ -38,7 +38,7 @@ fun getTestData(fileName: String): Array<Array<Any?>> {
 }
 
 fun executeTest(condition: Boolean) {
-    if (condition) {
+    if (!condition) {
         throw SkipException("Test skipped")
     }
 }
